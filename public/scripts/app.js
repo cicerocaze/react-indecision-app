@@ -1,13 +1,46 @@
-'use strict';
+"use strict";
 
-console.log('App.js is running!');
+console.log("App is running");
 
-//JSX (JavaScript Syntax Extension) - JavaScript XML
+// JSX - JavaScript XML
 var template = React.createElement(
-  'p',
-  null,
-  'Indecision App'
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        "Indesition App"
+    ),
+    React.createElement(
+        "p",
+        null,
+        "This is an info"
+    ),
+    React.createElement(
+        "ol",
+        null,
+        React.createElement(
+            "li",
+            null,
+            "Item one"
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Item two"
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Item three"
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Item four"
+        )
+    )
 );
-var appRoot = document.getElementById('app');
 
+var appRoot = document.getElementById('app');
 ReactDOM.render(template, appRoot);
