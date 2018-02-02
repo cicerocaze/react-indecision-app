@@ -2,6 +2,11 @@
 
 console.log("App is running");
 
+// if statements
+// ternary operators
+// logical and operator
+
+
 // create app object title/subtitle
 // use title/subtitle in the template
 // render template
@@ -66,6 +71,13 @@ var user = {
     age: 26,
     location: 'Philadelphia'
 };
+function getLocation(location) {
+    if (location) {
+        return location;
+    } else {
+        return 'Unknown';
+    }
+}
 
 var userName = user.name;
 var userAge = user.age;
@@ -88,7 +100,7 @@ var templateTwo = React.createElement(
         'p',
         null,
         'Location: ',
-        userLocation
+        getLocation(user.location)
     )
 );
 

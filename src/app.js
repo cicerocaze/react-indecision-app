@@ -1,5 +1,10 @@
 console.log("App is running");
 
+// if statements
+// ternary operators
+// logical and operator
+
+
 // create app object title/subtitle
 // use title/subtitle in the template
 // render template
@@ -38,6 +43,13 @@ let user = {
     age: 26,
     location: 'Philadelphia'
 }
+function getLocation(location){
+    if(location){
+        return location;
+    }else{
+        return 'Unknown';
+    }
+}
 
 let userName = user.name;
 let userAge = user.age;
@@ -46,7 +58,7 @@ let templateTwo = (
     <div>
         <h1>{userName}</h1>
         <p>Age: {userAge}</p>
-        <p>Location: {userLocation}</p>
+        <p>Location: {getLocation(user.location)}</p>
     </div>
 );
 
