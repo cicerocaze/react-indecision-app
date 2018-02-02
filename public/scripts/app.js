@@ -1,46 +1,98 @@
-"use strict";
+'use strict';
 
 console.log("App is running");
 
+// create app object title/subtitle
+// use title/subtitle in the template
+// render template
+
+var info = {
+    title: 'This is a title, H1 element',
+    subtitle: 'This is a subtitle, H2 element'
+};
+
+var title = info.title;
+var subtitle = info.subtitle;
+
 // JSX - JavaScript XML
 var template = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "Indesition App"
+        title
     ),
     React.createElement(
-        "p",
+        'h2',
         null,
-        "This is an info"
+        subtitle
     ),
     React.createElement(
-        "ol",
+        'ol',
         null,
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item one"
+            'Item one'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item two"
+            'Item two'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item three"
+            'Item three'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item four"
+            'Item four'
         )
     )
 );
 
+// Create a templateTwo var JSX expression
+// div
+//  h1 -> Andrew Mead
+//  p -> Age: 26
+//  p -> Location: Philadelphia
+//Render templateTwo instead of template
+
+var user = {
+    name: 'Cícero Cazé Rabelo',
+    age: 26,
+    location: 'Philadelphia'
+};
+
+var userName = user.name;
+var userAge = user.age;
+var userLocation = user.location;
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        userName
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Age: ',
+        userAge
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Location: ',
+        userLocation
+    )
+);
+
 var appRoot = document.getElementById('app');
+var componente2 = document.getElementById('c2');
 ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, componente2);
