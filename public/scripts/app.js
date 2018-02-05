@@ -2,18 +2,23 @@
 
 console.log("App is running");
 
+// Exercicio 3
+// only render the subtitle (and p tag) if subtitle exists - Logical and operator
+// render new p tag - if options.length > 0 "Here are your options" "No options"
+
+// Exercicio 2
 // if statements
 // ternary operators
 // logical and operator
 
-
+// Exercicio 1
 // create app object title/subtitle
 // use title/subtitle in the template
 // render template
 
 var info = {
-    title: 'This is a title, H1 element',
-    subtitle: 'This is a subtitle, H2 element'
+    title: 'This is a title',
+    subtitle: 'This is a subtitle'
 };
 
 var title = info.title;
@@ -27,6 +32,11 @@ var template = React.createElement(
         'h1',
         null,
         title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        app.subtitle
     ),
     React.createElement(
         'h2',
@@ -73,7 +83,12 @@ var user = {
 };
 function getLocation(location) {
     if (location) {
-        return location;
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
     } else {
         return 'Unknown';
     }
@@ -88,9 +103,9 @@ var templateTwo = React.createElement(
     React.createElement(
         'h1',
         null,
-        userName
+        userName ? userName : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',

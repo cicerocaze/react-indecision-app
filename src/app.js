@@ -1,17 +1,22 @@
 console.log("App is running");
 
+// Exercicio 3
+// only render the subtitle (and p tag) if subtitle exists - Logical and operator
+// render new p tag - if options.length > 0 "Here are your options" "No options"
+
+// Exercicio 2
 // if statements
 // ternary operators
 // logical and operator
 
-
+// Exercicio 1
 // create app object title/subtitle
 // use title/subtitle in the template
 // render template
 
 let info = {
-    title: 'This is a title, H1 element',
-    subtitle: 'This is a subtitle, H2 element'
+    title: 'This is a title',
+    subtitle: 'This is a subtitle'
 }
 
 let title = info.title;
@@ -21,6 +26,7 @@ let subtitle = info.subtitle;
 let template = (
     <div>
         <h1>{title}</h1>
+        {app.subtitle && <p>{app.subtitle}</p>}
         <h2>{subtitle}</h2>
         <ol>
             <li>Item one</li>
@@ -45,7 +51,7 @@ let user = {
 }
 function getLocation(location){
     if(location){
-        return location;
+        return <p>Location: {location}</p>;
     }else{
         return 'Unknown';
     }
@@ -56,8 +62,8 @@ let userAge = user.age;
 let userLocation = user.location;
 let templateTwo = (
     <div>
-        <h1>{userName}</h1>
-        <p>Age: {userAge}</p>
+        <h1>{userName ? userName: 'Anonymous'}</h1>
+        {(user.age && user.age >= 18) && <p>Age: {userAge}</p>}
         <p>Location: {getLocation(user.location)}</p>
     </div>
 );
