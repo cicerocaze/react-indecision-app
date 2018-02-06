@@ -1,33 +1,35 @@
 console.log("App is running");
 
-// Exercicio 3
-// only render the subtitle (and p tag) if subtitle exists - Logical and operator
-// render new p tag - if options.length > 0 "Here are your options" "No options"
+// Exercicio 1
+// create app object title/subtitle
+// use title/subtitle in the template
+// render template
 
 // Exercicio 2
 // if statements
 // ternary operators
 // logical and operator
 
-// Exercicio 1
-// create app object title/subtitle
-// use title/subtitle in the template
-// render template
+// Exercicio 3
+// only render the subtitle (and p tag) if subtitle exists - Logical and operator
+// render new p tag - if options.length > 0 "Here are your options" "No options"
 
-let info = {
-    title: 'This is a title',
-    subtitle: 'This is a subtitle'
+let app = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['one', 'two']
 }
 
-let title = info.title;
-let subtitle = info.subtitle;
+let title = app.title;
+let subtitle = app.subtitle;
+let options = app.options;
 
 // JSX - JavaScript XML
 let template = (
     <div>
         <h1>{title}</h1>
-        {app.subtitle && <p>{app.subtitle}</p>}
-        <h2>{subtitle}</h2>
+        {subtitle && <p>{subtitle}</p>}
+        <p>{options.length > 0 ? 'Here are your options': 'No options'}</p>
         <ol>
             <li>Item one</li>
             <li>Item two</li>
