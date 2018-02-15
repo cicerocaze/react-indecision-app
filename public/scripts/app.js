@@ -1,6 +1,6 @@
 'use strict';
 
-console.log("App is running");
+console.log('App is running');
 
 // Exercicio 1
 // create app object title/subtitle
@@ -20,30 +20,25 @@ var app = {
     title: 'Indecision App',
     subtitle: 'Put your life in the hands of a computer',
     options: ['one', 'two']
-};
 
-var title = app.title;
-var subtitle = app.subtitle;
-var options = app.options;
-
-// JSX - JavaScript XML
-var template = React.createElement(
+    // JSX - JavaScript XML
+};var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        title
+        app.title
     ),
-    subtitle && React.createElement(
+    app.subtitle && React.createElement(
         'p',
         null,
-        subtitle
+        app.subtitle
     ),
     React.createElement(
         'p',
         null,
-        options.length > 0 ? 'Here are your options' : 'No options'
+        app.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
         'ol',
@@ -79,7 +74,7 @@ var template = React.createElement(
 //Render templateTwo instead of template
 
 var user = {
-    name: 'Cícero Cazé Rabelo',
+    name: 'Andrew',
     age: 26,
     location: 'Philadelphia'
 };
@@ -91,27 +86,22 @@ function getLocation(location) {
             'Location: ',
             location
         );
-    } else {
-        return 'Unknown';
     }
 }
 
-var userName = user.name;
-var userAge = user.age;
-var userLocation = user.location;
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        userName ? userName : 'Anonymous'
+        user.name ? user.name : 'Anonymous'
     ),
     user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
-        userAge
+        user.age
     ),
     React.createElement(
         'p',
