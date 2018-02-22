@@ -1,16 +1,18 @@
+'use strict';
+
 // arguments objetcts - no longer bound with arrow functions
 
-const add = (a, b) => {
+var add = function add(a, b) {
     //console.log(arguments);
     return a + b;
 };
 console.log(add(55, 1, 1001));
 
 // this keyword - no longer bound
-const user = {
+var user = {
     name: 'Andrew',
     cities: ['Philadelphia', 'New York', 'Dublin'],
-    printPlacesLived: function () {
+    printPlacesLived: function printPlacesLived() {
         console.log(this.name);
         console.log(this.cities);
     }
